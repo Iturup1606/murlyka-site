@@ -61,6 +61,10 @@ def main() -> None:
         dst.parent.mkdir(parents=True, exist_ok=True)
         shutil.copy2(p, dst)
 
+    # GitHub сам коммитит в ветку (например, файл CNAME при смене домена в настройках Pages).
+    # Зеркало главнее: ставим HEAD на удалённую ветку, не трогая файлы, и коммитим разницу поверх неё.
+    if subprocess.run(["git", "-C", str(PAGES), "fetch", "-q", "origin", "main"], capture_output=True).returncode == 0:
+        git("reset", "-q", "origin/main")
     git("add", "-A")
     if not git("status", "--porcelain"):
         print("Изменений нет, публиковать нечего")
