@@ -5,14 +5,17 @@
 
 | Адрес | Что | Файл |
 |---|---|---|
-| https://iturup1606.github.io/murlyka-site/ | главная: котик, первое приложение, родителям, контакты | `index.html` |
-| https://iturup1606.github.io/murlyka-site/privacy | политика конфиденциальности приложений серии (адрес для RuStore) | `privacy/index.html` |
+| https://murlyka-kids.ru/ | главная: котик, первое приложение, родителям, контакты | `index.html` |
+| https://murlyka-kids.ru/privacy | политика конфиденциальности приложений серии (адрес для RuStore) | `privacy/index.html` |
 
 Разработчик: ООО «МК», ИНН 3808302760. Почта: tokoa436@gmail.com.
 
 ## Устройство
-- Пути относительные: сайт живёт в подпапке `/murlyka-site/`. `/privacy` открывается без `.html`, потому что это
-  папка `privacy` с `index.html` (Pages перенаправляет `/privacy` на `/privacy/`).
+- Домен murlyka-kids.ru (регистратор и DNS - SpaceWeb): 4 записи A на `185.199.108.153`, `185.199.109.153`,
+  `185.199.110.153`, `185.199.111.153` и CNAME `www` на `iturup1606.github.io`. Файл `CNAME` в корне сайта держит
+  домен в Pages, его не удалять. HTTPS обязательный, сертификат выдан 19.10.2026, GitHub продлевает его сам.
+- Пути относительные. `/privacy` открывается без `.html`, потому что это папка `privacy` с `index.html`
+  (Pages перенаправляет `/privacy` на `/privacy/`).
 - `assets/site.css` - все стили; цвета и шрифт из приложения (`uchim-vremya/app/lib/app_style.dart`):
   бирюзовый `#13A196`, малиновый `#D12E6A`, сливовый текст `#3A1830`, розовый фон `#FFF0F4`.
 - `assets/site.js` - появление блоков при прокрутке и котик: машет лапкой при загрузке, по нажатию прыгает и говорит.
@@ -26,7 +29,7 @@
 1. Ресурсы из приложения (после новых скриншотов или иконки): `py -3.12 D:\RuStore\_site\tools\build_assets.py`
 2. Скриншоты 1440 / 820 / 390 и проверки (горизонтальный скролл, консоль, шрифт, картинки):
    `py -3.12 D:\RuStore\_site\tools\shots.py` -> `_site\shots` (в git и на сайт не попадает).
-   По опубликованному адресу: `py -3.12 D:\RuStore\_site\tools\shots.py --url https://iturup1606.github.io/murlyka-site --tag live`
+   По опубликованному адресу: `py -3.12 D:\RuStore\_site\tools\shots.py --url https://murlyka-kids.ru --tag live`
 3. Тексты перед публикацией: `py -3.12 D:\RuStore\_site\tools\extract_text.py D:\Tools\ru-humanizer\work`, затем
    скилл `humanizer-ru-check` (19.10.2026: главная 76.3, политика 72.0, ПРОШЁЛ).
 4. Публикация: `py -3.12 D:\RuStore\_site\tools\publish.py "что изменилось"`. Скрипт копирует `_site` в

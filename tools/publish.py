@@ -2,7 +2,7 @@
 
 Запуск: py -3.12 D:\\RuStore\\_site\\tools\\publish.py "что изменилось"
 Репозиторий: https://github.com/Iturup1606/murlyka-site (публичный, Pages из ветки main, корень).
-Сайт:        https://iturup1606.github.io/murlyka-site/  и  .../privacy
+Сайт:        https://murlyka-kids.ru/  и  .../privacy
 Коммиты в публичном репозитории идут от адреса GitHub noreply: личная почта из git D:\\RuStore туда не попадает.
 _site_pages - зеркало: всё, чего нет в _site (кроме .git), из него убирается при каждой публикации.
 """

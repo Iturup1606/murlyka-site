@@ -1,7 +1,7 @@
 """Скриншоты сайта на компьютере (1440) и телефоне (390), плотность 2, и простые проверки.
 
 Запуск локально:   py -3.12 D:\\RuStore\\_site\\tools\\shots.py
-Запуск по адресу:  py -3.12 D:\\RuStore\\_site\\tools\\shots.py --url https://iturup1606.github.io/murlyka-site --tag live
+Запуск по адресу:  py -3.12 D:\\RuStore\\_site\\tools\\shots.py --url https://murlyka-kids.ru --tag live
 Снимки: D:\\RuStore\\_site\\shots\\<tag>_<страница>_<размер>.png
 Проверки: горизонтальная прокрутка, ошибки консоли, загрузка шрифта, битые картинки.
 """
