@@ -40,6 +40,10 @@ def sources() -> dict[Path, Path]:
 
 def main() -> None:
     message = sys.argv[1] if len(sys.argv) > 1 else "Обновление сайта"
+    # без CNAME (или с пустым) Pages отвяжет домен murlyka-kids.ru: такую копию не публикуем
+    cname = SITE / "CNAME"
+    if not cname.is_file() or not cname.read_text(encoding="utf-8").strip():
+        sys.exit("в _site нет файла CNAME или он пустой: без него Pages отвяжет домен, публикация остановлена")
     if not (PAGES / ".git").exists():
         PAGES.mkdir(exist_ok=True)
         subprocess.run(["git", "init", "-b", "main", str(PAGES)], check=True, capture_output=True)
